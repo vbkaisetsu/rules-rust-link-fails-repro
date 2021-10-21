@@ -1,0 +1,20 @@
+[package]
+name = "link_fail_repro"
+version = "0.1.0"
+authors = ["Koichi Akabe <vbkaisetsu@gmail.com>"]
+edition = "2018"
+
+[lib]
+path = "fake_lib.rs"
+
+[dependencies]
+cached = "0.25.1"
+prost = "=0.8.0"
+tokio = "=1.8.0"
+tonic = "=0.5.2"
+
+[package.metadata.raze]
+workspace_path = "//cargo"
+package_aliases_dir = "."
+targets = ["x86_64-unknown-linux-gnu"]
+genmode = "Remote"
